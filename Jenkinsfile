@@ -11,8 +11,6 @@ node {
         rtMaven.tool = 'M3' 
         rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
         rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
-        buildInfo = Artifactory.newBuildInfo()
-        buildInfo.env.capture = true
     }
 
     stage ('Exec Maven') {
@@ -20,6 +18,17 @@ node {
     }
 
     stage ('Publish build info') {
+        def uploadSpec = '''
+         "files": [
+            {
+              "pattern": "files/*",
+              "target": "corchestra-dev",
+            }
+        ]
+        '''
+        def buildInfo = server.upload spec: uploadSpec
+        buildInfo.env.capture = true
+
         server.publishBuildInfo buildInfo
     }
 }
