@@ -22,7 +22,7 @@ node {
         {
          "files": [
             {
-              "pattern": "files/*",
+              "pattern": "target/files/*",
               "target": "corchestra-dev"
             }
             ]
