@@ -18,13 +18,14 @@ node {
     }
 
     stage ('Publish build info') {
-        def uploadSpec = '''{
+        def uploadSpec = '''
+        {
          "files": [
             {
               "pattern": "files/*",
-              "target": "corchestra-dev",
+              "target": "corchestra-dev"
             }
-        ]
+            ]
         }'''
         buildInfo = server.upload spec: uploadSpec
         buildInfo.env.capture = true
