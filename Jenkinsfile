@@ -23,7 +23,7 @@ node {
          "files": [
             {
               "pattern": "target/files/*",
-              "target": "corchestra-dev"
+              "target": "corchestra-dev/$BUILD_NUMBER"
             }
             ]
         }'''
