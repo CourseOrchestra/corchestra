@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.curs</groupId>
+    <artifactId>corchestra</artifactId>
+    <version>6.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>corchestra</name>
+    <description>Full collection of Course-Orchestra components</description>
+    <url>https://corchestra.ru</url>
+
+    <organization>
+        <name>CURS</name>
+        <url>https://corchestra.ru</url>
+    </organization>
+
+    <scm>
+        <url>https://github.com/CourseOrchestra/corchestra.git</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL), Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <components.version>6.1-SNAPSHOT</components.version>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase/>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>create folder</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <attach>false</attach>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>files</finalName>
+                            <descriptors>
+                                <descriptor>src/assembly/bin.xml</descriptor>
+                            </descriptors>
+                            <attach>false</attach>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- celesta artifacts -->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>celesta</artifactId>
+            <version>${components.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <!--dbschemasync artifacts-->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>dbschemasync</artifactId>
+            <version>${components.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>dbschemasync</artifactId>
+            <version>${components.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- Flute artifacts -->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>flute</artifactId>
+            <version>${components.version}</version>
+            <type>exe</type>
+        </dependency>
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>flute</artifactId>
+            <version>${components.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>flute</artifactId>
+            <version>${components.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- xylophone artifacts -->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>xylophone</artifactId>
+            <version>${components.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>xylophone</artifactId>
+            <version>${components.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!--mellophone artifacts-->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>mellophone</artifactId>
+            <version>${components.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>mellophone</artifactId>
+            <version>${components.version}</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+</project>
