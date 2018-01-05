@@ -26,7 +26,7 @@ node {
             }
         ]
         '''
-        def buildInfo = server.upload spec: uploadSpec
+        buildInfo = server.upload spec: uploadSpec
         buildInfo.env.capture = true
 
         server.publishBuildInfo buildInfo
