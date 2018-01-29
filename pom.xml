@@ -144,5 +144,20 @@
             <version>${components.version}</version>
             <type>zip</type>
         </dependency>
+
+        <!--showcase artifacts-->
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>showcase</artifactId>
+            <version>${components.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.curs</groupId>
+            <artifactId>showcase</artifactId>
+            <version>${components.version}</version>
+            <type>zip</type>
+        </dependency>
     </dependencies>
 </project>
